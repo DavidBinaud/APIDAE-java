@@ -1,0 +1,95 @@
+package testPackage;
+
+public class TestString extends Object{
+   
+  public static void main(String[] args) {
+    String ch1 = "to",ch2="to";
+
+    System.out.println("ch1 = \""+ch1+"\"");
+    System.out.println("ch2 = \""+ch2+"\"");
+    System.out.println();
+   
+    System.out.println("ch2 == ch1 : "+(ch2==ch1));
+    System.out.println("ch2 == \"to\" : "+(ch2=="to"));
+    System.out.println();
+
+    String ch3 = "toto";
+    System.out.println("ch3 = \""+ch3+"\"");
+    System.out.println();
+    System.out.println("ch3 == \"toto\" : "+(ch3=="toto"));
+    System.out.println("ch3 == ch1+ch2 : "+(ch3==(ch1+ch2)));
+    System.out.println();
+   
+    String ch4 = ch1+ch2;
+    System.out.println("ch4 = \""+ch4+"\"");
+    System.out.println();
+    System.out.println("ch4 == \"toto\" : "+(ch4=="toto"));
+    System.out.println("ch4 == ch3 : "+(ch3==ch4));
+    System.out.println();
+
+    String ch5 = "to"+"to";
+   
+    System.out.println("ch5 = \""+ch5+"\"");
+    System.out.println("ch5 == \"toto\" : "+(ch5=="toto"));
+    System.out.println("ch5 == ch4 : "+(ch5==ch4));
+    System.out.println();
+   
+   }
+}
+
+au final l'affichage est:
+ch1 = "to"
+ch2 = "to"
+
+ch2 == ch1 : true
+ch2 == "to" : true
+
+ch3 = "toto"
+
+ch3 == "toto" : true
+ch3 == ch1+ch2 : true
+
+ch4 = "toto"
+
+ch4 == "toto" : true
+ch4 == ch3 : true
+
+ch5 = "toto"
+ch5 == "toto" : true
+ch5 == ch4 : true
+
+
+
+résultat réel:
+
+ch1 = "to"
+ch2 = "to"
+
+ch2 == ch1 : true
+ch2 == "to" : true
+
+ch3 = "toto"
+
+ch3 == "toto" : true
+ch3 == ch1+ch2 : false
+
+ch4 = "toto"
+
+ch4 == "toto" : false
+ch4 == ch3 : false
+
+ch5 = "toto"
+ch5 == "toto" : true
+ch5 == ch4 : false
+
+
+
+
+
+
+explication: https://dzone.com/articles/how-do-i-compare-strings-in-java
+l'opérateur == test l'égalité sur la référence
+
+Quand on instancie une string, si sa valeur existait dans un pot commun où sont stockées les string alors elle pointe vers la ref dans le pot commun.
+
+Quand on force l'instanciation d'une nouvelle String alors cela ne va pas dans le pot commun

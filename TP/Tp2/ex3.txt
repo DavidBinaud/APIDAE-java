@@ -1,0 +1,59 @@
+Rajout:
+
+System.out.println("ch1 equals ch2 : "+ch1.equals(ch2));
+System.out.println("ch2 equals \"to\" : "+ch2.equals("to"));
+System.out.println("ch3 equals \"toto\" : "+ch3.equals("toto"));
+System.out.println("ch3 equals ch1+ch2 : "+ch3.equals(ch1+ch2));
+System.out.println("ch4 equals \"toto\" : "+ch4.equals("toto"));
+System.out.println("ch4 equals ch3 : "+ch4.equals(ch3));
+System.out.println("ch5 equals \"toto\" : "+ch5.equals("toto"));
+System.out.println("ch5 equals ch4 : "+ch5.equals(ch4));
+
+
+execution:
+ch1 equals ch2 : true
+ch2 equals "to" : true
+ch3 equals "toto" : true
+ch3 equals ch1+ch2 : true
+ch4 equals "toto" : true
+ch4 equals ch3 : true
+ch5 equals "toto" : true
+ch5 equals ch4 : true
+
+
+2-
+
+ code de la fonction equals dans Object:
+  public boolean equals(Object obj) {
+        return (this == obj);
+}
+
+3-
+Au vu des résultats, on peut conclure que la classe String a override la méthode equals de Object car celle-ci compare les références, on devrait donc avoir comme précèdemment.
+
+4-code de la fonction equals dans String:
+ public boolean equals(Object anObject) {
+        if (this == anObject) {
+            return true;
+        }
+        if (anObject instanceof String) {
+            String anotherString = (String)anObject;
+            int n = value.length;
+            if (n == anotherString.value.length) {
+                char v1[] = value;
+                char v2[] = anotherString.value;
+                int i = 0;
+                while (n-- != 0) {
+                    if (v1[i] != v2[i])
+                        return false;
+                    i++;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+5-Il faut toujours comparer les lettres unes à unes, si les deux objets sont des strings de même tailles.
+
+6-Il faut redéfinir la méthode equals avec la logique qui nous intéresse

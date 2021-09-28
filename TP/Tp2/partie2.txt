@@ -1,0 +1,19 @@
+Partie 2 : clonage
+ex4:
+2.  getClass().getName() + '@' + Integer.toHexString(hashCode())
+Le nom de la classe + @ + une representation du hashcode
+
+4. la classe n'implemente pas l'interface Cloneable ce qui va lancer une CloneNotSupportedException
+
+5. juste rajouté implements Cloneable
+
+6.
+resultat
+t1 = testPackage.TestClone@4517d9a3 contient -> value = 2
+
+t2 = testPackage.TestClone@63961c42 contient -> value = 4
+
+t2 = testPackage.TestClone@65b54208 contient -> value = 2
+
+
+ex5:
