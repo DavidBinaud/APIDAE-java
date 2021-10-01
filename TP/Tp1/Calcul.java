@@ -8,7 +8,7 @@ public class Calcul{
 	public static void main(String[] args) {
 		if(args.length != 3){
 			System.out.println("Mauvais nombre d'arguments, veuillez formater comme tel: opérande1 opérateur opérande2\n opérateur peut être + - * /");
-		} else {
+		} /*else {
 			char operateur = args[1].charAt(0);
 			
 			if(args[0].indexOf('.') == -1){
@@ -50,7 +50,7 @@ public class Calcul{
 			}
 			System.out.println("Le résultat de l'opération " + operande1 + " "  + operateur + " " + operande2 + " est " + calcul(operande1, operateur, operande2));
 			
-		}
+		}*/
 	}
 
 	private static int calcul(int operande1, char operateur, int operande2){

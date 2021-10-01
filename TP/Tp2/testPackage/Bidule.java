@@ -1,5 +1,7 @@
 package testPackage;
 
+import java.util.Objects;
+
 public class Bidule implements Cloneable {
 
     private int valeur;
@@ -36,7 +38,27 @@ public class Bidule implements Cloneable {
   return personne;
     }
 
-    public static void main(String[] args) {
+  @Override
+  protected Object clone() throws CloneNotSupportedException {
+      Bidule clone = new Bidule(this.valeur);
+      clone.compteur = this.compteur;
+    return clone;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Bidule bidule = (Bidule) o;
+    return valeur == bidule.valeur && compteur == bidule.compteur && personne.equals(bidule.personne);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(valeur, personne, compteur);
+  }
+
+  public static void main(String[] args) {
   Bidule bidule1 = new Bidule(2);
   System.out.println("bidule1 = " + bidule1);
   System.out.println();

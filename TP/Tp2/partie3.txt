@@ -1,0 +1,15 @@
+Partie 3 : la structure liste
+ex7.
+3. La méthode qui réalise le formatage en String d'une liste est toString héritée de java.util.AbstractCollection<E>
+
+ex8.
+1.
+    @Override
+    public int compareTo(Object o) throws NullPointerException{
+        if (this == o) return 0;
+        if (o == null || getClass() != o.getClass()) throw new NullPointerException();
+        Salarie s = (Salarie) o;
+        if(this.salaire < s.salaire)return 1;
+        else if(this.salaire == s.salaire) return 0;
+        return -1;
+    }

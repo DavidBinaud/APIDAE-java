@@ -17,3 +17,6 @@ t2 = testPackage.TestClone@65b54208 contient -> value = 2
 
 
 ex5:
+Le problème lors du clonage est que Bidule a un attribut de type Objet qu'il faudrait lui même cloner sinon les deux objets bidule pointent vers la même personne.
+
+faire ce changement implique que le test d'égalité entre les deux objets ne fonctionnent plus car les références sont différentes, il faut que l'on redéfinisse la méthode equals pour Bidule et pour Personne
