@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="Fabien MICHEL"><style type="text/css">
+
+html{
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0px;
+  padding: 30px 0px 0px 150px;background-image: url('http://www.lirmm.fr/~fmichel/ens/images/back.gif');}img{behavior:url('http://www.lirmm.fr/~fmichel/ens/images/pngbehavior.htc');}
+div#header {
+  position:absolute;
+  top:0px;
+  left: 0px;
+  height: 33px;
+  width: 100%;
+  font-size: 30px;
+  background: #cccccc;/*#fc0;*/
+  color: teal;
+  text-align: center;
+  z-index:10;
+}
+
+div#lirmm {
+  position:absolute;
+  top:90px;
+  right: 5%;
+  text-align: right;
+    font-size: 25px;
+  color: white;
+  z-index:20;
+}
+
+div#flag {
+  position:absolute;
+  top:40px;
+  left: 10px;
+}
+
+div#jws {
+  width: 300px;
+}
+
+div#menu {
+  position:absolute;
+  top:100px;
+  left: 5px;
+  height: 100%;
+  width: 150px;
+  font-weight: bold;
+  font-size: 18px;
+  width: 130px;
+  font-variant      : small-caps ;
+}
+
+@media screen{
+  body>div#header{
+   position:fixed;
+  }
+  body>div#flag{
+   position:fixed;
+  }
+  body>div#lirmm{
+   position:fixed;
+  }
+  body>div#menu{
+   position:fixed;
+  }
+ }
+ * html body{
+  overflow:hidden;
+ } 
+ * html div#content2{
+  height:100%;
+  overflow:auto;
+ }
+
+
+#footer {
+  padding: 1.2em 2.0em;
+  font-size: 0.8em;
+  color: #fff;
+  background-color: #cccccc;/*#fc0;*/
+  text-align: center;
+}
+
+#menu ul{
+  margin-top: 0px;
+  margin-left:10px;
+  border-top: 1px solid #fc0;
+  border-bottom: 1px solid #fc0;
+  list-style-type: none;
+  padding: 5px 0px 5px 0px;
+}
+
+#menu li{
+  padding: 5px 0px 5px 7px;
+}
+
+#menu a{
+  color: teal;
+  padding: 3px 3px 3px 3px;
+  text-decoration: none;
+}
+#menu a:hover{
+  background-color:teal;
+  color:#fc0;
+}
+
+.submenu{
+  font-size: 12px;
+    font-variant      : normal ;
+}
+
+ul.submenu{
+  border-top: 10px solid #fc0;
+  border-bottom: 10px solid #fc0;
+}
+</style>	
+<style type="text/css">
+#content {
+	float: left;
+  width: 700px;
+  margin-top: 3%;
+  margin-left: 3%;
+}
+
+/*section title*/
+#content h1{
+  font-size:26;
+  background-color: teal;
+  text-align : center;
+  margin: 100 0 25 0;
+  
+}
+
+
+body {
+  margin: 0px;
+  padding: 30px 0px 0px 50px;
+}
+
+img{margin-top:0.423cm; margin-bottom:1cm; }
+
+*.Apis { font-family:'Courrier'; font-size:12pt; text-align:center ! important; background-color:#ffffcc; }
+*.Heading2 { font-family:'Avalon,Wide Latin'; font-size:18pt; margin-top:0.4cm; margin-bottom:0.4cm; font-style:italic; font-weight:bold; }
+*.enonce {margin-top:0.5cm; margin-bottom:0.5cm;  font-family:'Times New Roman'; font-size:14pt; text-align:justify ! important; }
+*.titre{font-family:'Avalon,Wide Latin';text-align: center; font-size:40pt;}
+
+	td, th { vertical-align:top; }
+	h1, h2, h3, h4, h5, h6 { clear:both }
+	ol, ul { padding:0,10; }
+	* { margin:0; }
+	*.Caption { font-family:'Times New Roman'; font-size:12pt; margin-top:0.212cm; margin-bottom:0.212cm; font-style:italic; }
+	*.Heading { font-family:Arial; font-size:14pt; margin-top:0.423cm; margin-bottom:0.212cm; }
+	*.Heading1 { font-family:Arial; font-size:115%; margin-top:0.423cm; margin-bottom:0.212cm; font-weight:bold; }
+
+	*.Heading3 { font-family:Arial; font-size:14pt; margin-top:0.423cm; margin-bottom:0.212cm; font-weight:bold; }
+	*.Index { font-family:'Times New Roman'; font-size:12pt; }
+	*.List { font-family:'Times New Roman'; font-size:12pt; margin-top:0cm; margin-bottom:0.212cm; }
+	*.P1 { font-family:'Times New Roman'; font-size:12pt; text-align:center ! important; }
+	*.P10 { font-family:'Courier New'; font-size:9pt; text-align:justify ! important; color:#000000; }
+	*.P11 { font-family:'Courier New'; font-size:9pt; text-align:justify ! important; color:#00c87d; }
+	*.P12 { font-family:'Courier New'; font-size:9pt; text-align:justify ! important; }
+	*.P13 { font-family:'Times New Roman'; font-size:12pt; text-align:justify ! important; }
+	*.P14 { font-family:'Times New Roman'; font-size:12pt; text-align:justify ! important; }
+	*.P15 { font-family:'Times New Roman'; font-size:9pt; text-align:justify ! important; }
+	*.P16 { font-family:'Times New Roman'; font-size:12pt; text-align:justify ! important; }
+	*.P17 { font-family:'Courier New'; font-size:12pt; text-align:justify ! important; }
+	*.P18 { font-family:Arial; font-size:12pt; text-align:justify ! important; }
+	*.P19 { font-family:Arial; font-size:12pt; text-align:center ! important; background-color:#ffffcc; font-weight:bold; }
+	*.P2 { font-family:'Times New Roman'; font-size:12pt; }
+	*.P20 { font-family:'Courier New'; font-size:9pt; text-align:justify ! important; }
+	*.P21 { font-family:Arial; font-size:115%; margin-top:0.423cm; margin-bottom:0.212cm; font-weight:bold; text-align:center ! important; }
+	*.P22 { font-family:'Times New Roman'; font-size:12pt; margin-top:0cm; margin-bottom:0.212cm; text-align:justify ! important; }
+	
+	*.P5 { font-family:Arial; font-size:24.1000003814697pt; margin-top:0.423cm; margin-bottom:0.212cm; font-weight:bold; text-align:center ! important; text-decoration:underline; }
+	*.P6 { font-family:Arial; font-size:14pt; margin-top:0.423cm; margin-bottom:0.212cm; font-style:italic; font-weight:bold; }
+	*.P7 { font-family:Arial; font-size:24.1000003814697pt; margin-top:0.423cm; margin-bottom:0.212cm; font-weight:bold; text-align:center ! important; text-decoration:underline; }
+	*.P8 { font-family:'Courier New'; font-size:12pt; text-align:justify ! important; color:#000000; }
+	*.P9 { font-family:'Times New Roman'; font-size:12pt; text-align:left ! important; background-color:#ffffcc; font-weight:bold; }
+	*.Standard { font-family:'Times New Roman'; font-size:12pt; }
+	*.TableContents { font-family:'Times New Roman'; font-size:12pt; }
+	*.TableHeading { font-family:'Times New Roman'; font-size:12pt; text-align:center ! important; font-weight:bold; }
+	*.Textbody { font-family:'Times New Roman'; font-size:12pt; margin-top:0cm; margin-bottom:0.212cm; }
+	*.Tableau1 { width:80%; margin-left: auto; margin-right: auto; float:none; }
+	*.Tableau2 { width:29.953cm; float:none; }
+	*.Tableau3 { width:29.953cm; float:none; }
+	*.Tableau4 { width:29.953cm; float:none; }
+	*.Tableau5 { width:29.953cm; float:none; }
+	*.Tableau6 { width:29.953cm; float:none; }
+	*.Tableau7 { width:29.953cm; float:none; }
+	*.Tableau8 { width:130%; float:none; background-color:transparent; }
+	*.Tableau9 { width:29.953cm; float:none; background-color:transparent; }
+	*.Tableau1A1 { vertical-align:middle; background-color:transparent; padding:0.1cm; border-width:0.1cm; font-family:'Times New Roman'; font-size:12pt; text-align:center; background-color:#ffffcc; font-weight:bold; border-style:solid; border-color:#000000; }
+	*.Tableau2A1 { vertical-align:middle; padding:0.097cm; border-width:0.079cm; border-style:solid; border-color:#000000; }
+	*.Tableau3A1 { vertical-align:middle; padding:0.097cm; border-width:0.079cm; border-style:solid; border-color:#000000; }
+	*.Tableau4A1 { vertical-align:middle; padding:0.097cm; border-width:0.079cm; border-style:solid; border-color:#000000; }
+	*.Tableau5A1 { vertical-align:middle; padding:0.097cm; border-width:0.079cm; border-style:solid; border-color:#000000; }
+	*.Tableau6A1 { vertical-align:middle; padding:0.097cm; border-width:0.079cm; border-style:solid; border-color:#000000; }
+	*.Tableau7A1 { background-color:#e6e6ff; padding:0.097cm; border-left-width:0.0133cm; border-left-style:solid; border-left-color:#000000; border-right-style:none; border-top-width:0.0133cm; border-top-style:solid; border-top-color:#000000; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; }
+	*.Tableau7B1 { background-color:#e6e6ff; padding:0.097cm; border-width:0.0133cm; border-style:solid; border-color:#000000; }
+	*.Tableau8A1 { vertical-align:top; background-color:#e6e6ff; padding:0.097cm; border-left-width:0.0133cm; border-left-style:solid; border-left-color:#000000; border-right-style:none; border-top-width:0.0133cm; border-top-style:solid; border-top-color:#000000; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; }
+	*.Tableau8B1 { vertical-align:top; background-color:#e6e6ff; padding:0.097cm; border-width:0.0133cm; border-style:solid; border-color:#000000; }
+	*.Tableau9A1 { vertical-align:top; background-color:#e6e6ff; padding:0.097cm; border-width:0.0133cm; border-style:solid; border-color:#000000; }
+	*.Tableau1A { width:80%; }
+	*.Tableau2A { width:29.953cm; }
+	*.Tableau3A { width:29.953cm; }
+	*.Tableau4A { width:29.953cm; }
+	*.Tableau5A { width:29.953cm; }
+	*.Tableau6A { width:29.953cm; }
+	*.Tableau7A { width:14.975cm; }
+	*.Tableau8A { width:14.975cm; }
+	*.Tableau9A { width:29.953cm; }
+	*.Tableau81 { background-color:transparent; }
+	*.Tableau91 { background-color:transparent; }
+	*.BulletSymbols { font-family:StarSymbol; font-size:9pt; }
+	*.T1 { font-family:Arial; font-size:14pt; font-style:italic; font-weight:bold; }
+	*.T2 { }
+	*.T3 { font-family:'Times New Roman'; font-size:12pt; }
+	*.T4 { color:#000000; }
+	*.T5 { color:#000000; }
+	*.T6 { font-family:Arial; }
+	*.T7 { font-family:Arial; font-size:24.1000003814697pt; font-weight:bold; text-decoration:underline; }
+
+</style><style type="text/css">
+td.java, td.java-ln {vertical-align:top;}
+tt.java, tt.java-ln, pre.java, pre.java-ln {line-height:1em; margin-bottom:0em;}
+td.java-ln { text-align:right; }
+tt.java-ln, pre.java-ln { color:#888888 }
+/* Background       */ span.java0  { font-size: 10pt; color:#ffffff; }
+/* Line numbers       */ span.java1  { font-size: 10pt; color:#808080; }
+/* Multi-line comments       */ span.java2  { font-size: 10pt; color:#3f7f5f; }
+/* Single-line comments       */ span.java3  { font-size: 10pt; color:#3f7f5f; }
+/* Keywords       */ span.java4  { font-size: 10pt; color:#7f0055; font-weight:bold; }
+/* Strings       */ span.java5  { font-size: 10pt; color:#2a00ff; }
+/* Character constants       */ span.java6  { font-size: 10pt; color:#990000; }
+/* Numeric constants       */ span.java7  { font-size: 10pt; color:#990000; }
+/* Parenthesis       */ span.java8  { font-size: 10pt; color:#000000; }
+/* Primitive Types       */ span.java9  { font-size: 10pt; color:#7f0055; font-weight:bold; }
+/* Others       */ span.java10  { font-size: 10pt; color:#000000; }
+/* Javadoc keywords       */ span.java11  { font-size: 10pt; color:#7f9fbf; }
+/* Javadoc HTML tags       */ span.java12  { font-size: 10pt; color:#7f7f9f; }
+/* Javadoc links       */ span.java13  { font-size: 10pt; color:#3f3fbf; }
+/* Javadoc others       */ span.java14  { font-size: 10pt; color:#3f5fbf; }
+/* Undefined       */ span.java15  { font-size: 10pt; color:#ff6100; }
+/* Annotation       */ span.java16  { font-size: 10pt; color:#646464; }
+</style>	<title>Fabien MICHEL --  TP_JAVA
+</title><meta name='keywords' content='Fabien MICHEL, IUT Montpellier, Java, Programmation orientée objet, Licence professionnelle'><meta name='description' content='IUT Montpellier -- PO Java -- PO Java'><link href='http://www.lirmm.fr/logolirmm.ico' rel='SHORTCUT ICON'></head><body><div id='header'> TP_JAVA
+</div><div id='lirmm'><a href='http://www.lirmm.fr'><IMG src='http://www.lirmm.fr/~fmichel/ens/images/Logo_Lirmm.png' width='80' border='0' title='logo Lirmm' alt='logo Lirmm'></a><br/><br/><br/><a href='http://www.univ-montp2.fr'><IMG src='http://www.lirmm.fr/~fmichel/ens/images/LOGO_UM.png' width='90' border='0' title='logo um' alt='logo um'></a><br/><br/><br/><a href='http://www.cnrs.fr'><IMG src='http://www.lirmm.fr/~fmichel/ens/images/CNRSinter.jpg' width='65' border='0' title='logo cnrs' alt='logo cnrs'></a><br/><br/><br/><a href='https://iut-montpellier-sete.edu.umontpellier.fr/dut-informatique'><IMG src='http://www.lirmm.fr/~fmichel/ens/images/logoiut.jpg' width='100' border='0' title='logo iut' alt='logo iut'></a></div>
+<div id="content2">
+<div id="content">
+
+<p class='titre'>Premiers programmes<br />en Java<br>
+
+
+<!--
+<h1 class="titre">Avant de commencer</a></h1>
+ 
+<p class='enonce'>Lors de tous les TDs, lorsque vous trouverez des indications du type suivant :</p>
+<br/><br/><div style='text-align: center;'><table class='Tableau1' border='0' cellpadding='0' cellspacing='0'><colgroup><col width='1309'></colgroup><tbody><tr><td style='text-align: center; width: 29.953cm;' class='Tableau1A1'><p class='Apis'><a href='http://docs.oracle.com/javase/8/docs/api'>API</a></p><p class='Apis'>java.lang.Object</p><p class='Apis'>java.lang.String</p></td></tr></tbody></table><br/></div><p class="enonce">Cela signifie que vous devez &eacute;tudier la classe correspondante dans la documentation officielle d'Oracle,
+<a href="http://docs.oracle.com/javase/7/docs/api/">Java (API)</a>, pour r&eacute;aliser votre programme ou pouvoir comprendre la question. il s'agit de vous
+familiariser par vous-m&ecirc;me avec la documentation du langage. Celle-ci
+est exhaustive et tr&egrave;s bien faite : Il faut savoir s'en servir !&nbsp;<br />Profitez-en pour garder cette page dans votre marque page<br />De plus, utilisez autant que possible la navigation par package (frame en haut à gauche) pour trouver les classes dans l'API.
+Dans ce tp nous n'utiliserons que des classes appartenant au package <span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>java.lang</span></p>
+-->
+
+<h1 class="titre">L'environnement de programmation</h1>
+
+<p class='enonce'>Pour ces premiers TPs, nous allons utiliser un simple éditeur de texte comme emacs, gedit ou tout autre éditeur capable da faire de la coloration syntaxique. 
+Il s'agit ainsi de se familiariser avec les commandes java et javac, et de bien comprendre comment java fonctionne.</p>
+
+<h1 class="titre">Compiler et exécuter : javac et java</h1>
+<p class='enonce'>Pour faire un programme en Java, il faut taper son code via l'éditeur de texte sélectionné et de l'enregistrer dans un fichier, par exemple MonProg.java.
+<br /><br />Pour compiler le programme il faut taper la commande :<br />
+<br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> javac nom_fich.java</span><br/>	<br />
+Cette commande génère un fichier compilé de nom : MonProg.class. Et pour lancer l'exécution de ce programme il faut taper :
+<br /><br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java MonProg</span><br/>
+</p>
+
+<h1 class="titre">Le code minimal</h1>
+<p class='enonce'>
+En Java, tout programme contient au moins une classe publique contenant la méthode <span style= 'font-family: Courier New, Courier; font-size: 13pt; '><span style= 'color:#7f0055; font-weight:bold;'>public static void </span><span style='color:#000000; font-weight:bold;'>main</span>(String[] args)</span>.
+C'est cette méthode qui est exécutée après le lancement de la JVM. 
+Comme vous le verrez plus tard, en règle générale, chaque classe est stockée dans un fichier différent. 
+Le nom du fichier doit être identique au nom de la classe qu'il contient avec en plus l'extension '.java', en respectant les minuscules et les majuscules.
+Voici le code minimal pour un programme Java :
+</p>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Minimal&nbsp;:&nbsp;illustration&nbsp;du&nbsp;code&nbsp;minimal&nbsp;requis&nbsp;pour&nbsp;un&nbsp;programme&nbsp;Java</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff"></font><br />
+<font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@author&nbsp;</font><font color="#3f5fbf">Bob</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">Minimal&nbsp;</font><font color="#000000">{</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">args&nbsp;param&egrave;tres&nbsp;du&nbsp;programme</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">main</font><font color="#000000">(</font><font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">args</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//votre&nbsp;code&nbsp;...</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+</body></html>
+
+<p class='enonce'>
+Remarques :
+<ul>
+	<li>le symbole // permet d'écrire une ligne de commentaire (ignorée du compilateur).</li>
+	<li>Comme nous le verrons les symboles /** */ permettent de créer des commentaires qui seront accessibles en ligne. Prenez l'habitude de toujours écrire des commentaires, même pour les classes les plus simples!</li>
+	<li>Le code précédent doit être enregistré dans un fichier portant le nom Minimal.java</li>
+</ul>
+
+</p>
+
+<h1 class='titre'>Hello World!</h1>
+<p class='enonce'>
+L'exemple suivant est le code complet d'un programme java qui se contente d'afficher la chaîne de caractère :  "Hello world!"
+</p>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#3f5fbf">/**&nbsp;</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;The&nbsp;HelloWorldApp&nbsp;class&nbsp;implements&nbsp;an&nbsp;application&nbsp;that</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;simply&nbsp;prints&nbsp;&#34;Hello&nbsp;World!&#34;&nbsp;to&nbsp;standard&nbsp;output.</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">HelloWorldApp&nbsp;</font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">main</font><font color="#000000">(</font><font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">args</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(</font><font color="#2a00ff">&#34;Hello&nbsp;World!&#34;</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><font color="#3f7f5f">//&nbsp;Display&nbsp;the&nbsp;string.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+</body></html>
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 1: </h2><p class='enonce'>Écrivez, compilez et exécuter le programme précédent.</p>
+<p class='enonce'>
+Notez au passage une méthode très importante en Java :<br />
+<br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>System.out.println("votre texte");</span><br/>
+<br />
+Cette méthode vous permet d'afficher une ligne de texte. Vous pouvez l'utiliser aussi pour afficher la valeur d'une variable :
+<br />	<br />	<span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>int n=5;
+<br/>System.out.println(n);</span><br />
+		<br /><br />
+Ou encore une chaîne structurée avec un texte et la valeur d'une variable :<br /><br />
+<span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>int n=5;<br />System.out.println("La valeur de n est : "+n);</span></p>
+
+<p class='enonce'>
+Testez ces différentes utilisations en modifiant la classe <span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>HelloWorldApp</span>.
+</p>
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 2: </h2><p class='enonce'>
+<p class='enonce'>
+Coder la fonction factorielle dans un programme, appelé <span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>Factorielle</span>. Ce programme affichera la factorielle de n, n étant une variable de type int dont la valeur est fixée dans le code au moment de sa déclaration ( int n = 5; ).
+exemple, si n est fixée 5 :  <br />	<br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java Factorielle<br/>factorielle pour n = 5 : 120</span><br/>  
+</p>
+
+
+<h1 class='titre'>Les paramètres d'un programme</h1>
+
+<p class='enonce'>
+Un programme peut recevoir des paramètres que l'on spécifie dans la ligne de commande  au moment du lancement de l'exécution du programme.
+Exemple :	<br/><br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java Prog p1 p2 p3</span><br/><br/>
+Cette ligne de commande lance donc l'exécution du programme Prog avec les paramètres : p1 p2  et p3. Les paramètres sont des chaînes de caractères, séparés les uns des autres par des espaces.
+</p>
+
+<p class='enonce'>
+Récupération des paramètres transmis :<br />
+Dans le programme les paramètres sont placés dans l'argument <span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>args</span> de la méthode <span style= 'font-family: Courier New, Courier; font-size: 13pt; '><span style= 'color:#7f0055; font-weight:bold;'>public static void </span><span style='color:#000000; font-weight:bold;'>main</span>(String[] args)</span>, comme vous l'avez remarqué args est un tableau de String, c'est a dire un tableau de chaînes de caractères. Dans l'exemple précédent on aura alors : la chaîne p1 dans args[0] , la chaîne p2 dans args[1] et la chaîne p3 dans args[2].<br />
+Rappel : le nombre d'éléments que contient un tableau "tableau" est donné par la valeur <span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>tableau.length</span>. Ainsi toujours dans notre exemple : args.length vaut 3.
+</p>
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 3: </h2><p class='enonce'>Ecrire un programme appelé AfficheArgs qui affiche tous les paramètres qui lui sont transmis en ligne de commande (un par ligne).</p>
+<!--
+
+
+
+<br/><br/><div style='text-align: center;'><table class='Tableau1' border='0' cellpadding='0' cellspacing='0'><colgroup><col width='1309'></colgroup><tbody><tr><td style='text-align: center; width: 29.953cm;' class='Tableau1A1'><p class='Apis'><a href='http://docs.oracle.com/javase/8/docs/api'>API</a></p><p class='Apis'>java.lang.Integer</p></td></tr></tbody></table><br/></div>
+-->
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 4: </h2><p class='enonce'>Écrivez un programme Factorielle2 qui calcule la factorielle d'une valeur n donnée en paramètre au moment du lancement du programme.</p><p class='enonce'>
+Exemple : <br /><br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java Factorielle2 3 <br/>factorielle pour n = 3 : 6</span><br/>  
+<span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java Factorielle2 6 <br/>factorielle pour n = 6 : 720</span><br/>
+</p>
+
+
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 5: </h2><p class='enonce'>
+<p class='enonce'>
+<!--
+
+Par ailleurs, pour analyser les paramètres passés au programme, il est aussi possible d'utiliser l'une des nombreuses
+méthodes de la classe String. Trouvez quelle est la méthode qui permet de récupérer
+les caractères d'une String, individuellement, dans une varible du type primitif <span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>char</span>.
+
+
+<br/><br/><div style='text-align: center;'><table class='Tableau1' border='0' cellpadding='0' cellspacing='0'><colgroup><col width='1309'></colgroup><tbody><tr><td style='text-align: center; width: 29.953cm;' class='Tableau1A1'><p class='Apis'><a href='http://docs.oracle.com/javase/8/docs/api'>API</a></p><p class='Apis'>java.lang.String</p></td></tr></tbody></table><br/></div>   
+
+
+Cette méthode pourra par exemple être utilisée dans l'exercice suivant pour récupérer l'opérateur dans une variable
+de type <span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>char</span> afin de réaliser un switch dessus.
+-->
+
+</p>
+<p class='enonce'>
+Ecrire un programme, appelé Calcul, qui retourne le résultat d'une opération donnée en paramètre, 
+il doit gérer les opérateurs : + - *  et / et supporter des opérandes à virgule (on se limitera au cas où seulement 2 opérandes
+et un opérateur sont donnés en paramètres.
+		Exemple : 	<br/><br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java Calcul  5 + 6.5<br/>11.5</span></p>
+<p class='enonce'>
+Attention : l'exécution dans une console Unix de la commande : 
+<br /><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java Calcul 3 * 4</span> <br /> provoque une erreur car le caractère * 
+est interprété par le shell et est remplacé par l'ensemble des noms de fichier contenu 
+dans le répertoire courant. Convainquez-vous en exécutant la commande : 
+<br /><br /><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java AfficheArgs *</span>  <br /> <br />Il faut donc taper à la place :
+<br /><br /><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java Calcul 3 "*" 4</span><br /><br />
+Ceci n'a aucune conséquence pour le programme, il recevra toujours les paramètres 3, * et 4.
+</p>
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 6: </h2><p class='enonce'>Écrire un programme appelé DernierIndexDans qui, étant donné une string et un caratère, donne la dernière position du caractère dans la string ou -1 si il n'y en a pas. La première position étant numérotée 0.</p><p class='enonce'>
+Exemple : <br /><br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java DernierIndexDans testeur e<br/>Le dernier e dans testeur se trouve à la position 4</span><br/>  
+<span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>>> java dernierIndexDans testeur a<br/>Le dernier a dans testeur se trouve à la position -1</span><br/>
+</p>
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 7: </h2><p class='enonce'>Écrire un programme appelé TermineAvec, étant donné deux strings, vérifie si la première se termine par la deuxième.</p><p class='enonce'>
+Exemple : <br /><br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java TermineAvec testeur eur<br/>testeur se termine bien en eur</span><br/>  
+<span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>>> java DernierIndexDans testeur eurr<br/>testeur ne se termine pas en eurr</span><br/>
+<span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>>> java DernierIndexDans testeur euR<br/>testeur ne se termine pas en euR</span><br/>
+</p>
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 8: </h2><p class='enonce'>Écrire un programme appelé TermineAvecIgnorerLaCasse qui fait la même chose mais sans tenir compte de la casse des caractères</p><p class='enonce'>
+Exemple : <br /><br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java termineAvecIgnorerLaCasse testeur eur<br/>testeur se termine bien en eur</span><br/>  
+<span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>>> java TermineAvecIgnorerLaCasse testeur eurr<br/>testeur ne se termine pas en eurr</span><br/>
+<span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>>> java TermineAvecIgnorerLaCasse testeur euR<br/>testeur se termine bien en euR</span><br/>
+</p>
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 9: </h2><p class='enonce'>Ecrire un programme nommé HexadecimalToInteger : un convertisseur hexadécimal -> décimal qui affiche la valeur décimale d'un caractère (un seul) hexadécimal fournit en paramètre. Par ailleurs, le programme doit vérifier que le caractère passé en argument est bien un nombre hexadécimal et le signaler à l'utilisateur dans le cas contraire.</p><p class='enonce'>
+Exemples: 	<br/><br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java HexaToInt  A<br/>10</span><br/><br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java HexaToInt  G<br/>Erreur: G n'est pas un caractere hexadecimal.
+</span></p>
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 10: </h2><p class='enonce'>Améliorer le programme précédent pour qu'il puisse convertir une valeur hexadécimale de plusieurs caractères.</p><p class='enonce'>
+Exemple: 	<br/><br/><span style='font-family: Courier New, Courier; font-size: 13pt; color:#000000; font-weight:bold;'>> java HexaToInt  B5<br/>181</span>
+<!--
+<br/><br/><div style='text-align: center;'><table class='Tableau1' border='0' cellpadding='0' cellspacing='0'><colgroup><col width='1309'></colgroup><tbody><tr><td style='text-align: center; width: 29.953cm;' class='Tableau1A1'><p class='Apis'><a href='http://docs.oracle.com/javase/8/docs/api'>API</a></p><p class='Apis'>java.lang.String</p></td></tr></tbody></table><br/></div>  
+-->
+
+</p>
+
+<!--
+<br/><br/><div style='text-align: center;'><table class='Tableau1' border='0' cellpadding='0' cellspacing='0'><colgroup><col width='1309'></colgroup><tbody><tr><td style='text-align: center; width: 29.953cm;' class='Tableau1A1'><p class='Apis'><a href='http://docs.oracle.com/javase/8/docs/api'>API</a></p><p class='Apis'>java.lang.System</p></td></tr></tbody></table><br/></div>  
+-->
+
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 11: </h2><p class='enonce'>Écrire un programme nommé SystemProperty qui affiche les propriétés de l'OS suivantes : le nom de l'utilisateur, tel qu'il est enregistré dans l'OS, le répertoire de travail courant et le numéro de version de la machine virtuelle utilisée pour lancer le programme</p>
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 12: </h2><p class='enonce'>Écrire un programme qui crée un tableau d'entier de taille 100 initialisé avec les vingt premiers indexes à 0, les 60 suivants à 2 et les 20 derniers à 8. Ensuite le programme doit afficher le tableau avec le formatage précis suivant : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+</p>
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 13: </h2><p class='enonce'>Écrire un programme qui copie son fichier source dans un sous répertoire "backup" </p>
+<br/><br/><hr/><br/><h2 class='Heading2'>Exercice 14: </h2><p class='enonce'>Écrire un programme qui prend en paramètre une url (e.g. http://www.lirmm.fr) et un nom de fichier. L'objectif est d'enregistrer le fichier correspondant à l'url dans un fichier du nom donné comme deuxième paramètre</p>
+
+</p>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -2,7 +2,7 @@ package testPackage;
 
 import java.util.Objects;
 
-public class Personne{
+public class Personne implements Cloneable{
 
   private String name;
  
@@ -33,5 +33,10 @@ public class Personne{
   @Override
   public int hashCode() {
     return Objects.hash(name);
+  }
+
+  @Override
+  public Object clone() throws CloneNotSupportedException {
+    return super.clone();
   }
 }

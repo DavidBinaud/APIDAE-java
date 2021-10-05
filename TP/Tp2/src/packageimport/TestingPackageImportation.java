@@ -1,4 +1,4 @@
-package Tp2.packageimport;
+package packageimport;
 
 import Tp1.packageimport.HelloWorldWithPackage;
 
