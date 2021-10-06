@@ -64,6 +64,7 @@ public class Tamagoshi {
     public String toString() {
         return "Tamagoshi{" +
                 "name='" + name +
+                ", age=" + age +
                 ", energy=" + energy +
                 ", maxEnergy=" + maxEnergy + '\'' +
                 '}';

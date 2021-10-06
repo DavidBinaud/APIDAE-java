@@ -31,22 +31,22 @@ public class TamaGame {
 
     public void play(){
         int maxRound = Tamagoshi.getLifeTime();
-        for(int i = 0; i <= maxRound; i++){
+        for(int i = 0; i < maxRound; i++){
             if(tamagoshisPlaying.isEmpty()) {
                 break;
             } else {
-                System.out.println("\n------ Cycle " + i + " ------");
-                for (Tamagoshi t : tamagoshisPlaying) {
-                    t.parle();
-                }
-                //manger
-                System.out.println("Nourrir quel tamagoshi ?");
+                System.out.println("\n------ Cycle " + (i+1) + " ------");
+
+                //Parler
                 StringJoiner sj = new StringJoiner(" ");
                 for (Tamagoshi t : tamagoshisPlaying) {
+                    t.parle();
                     sj.add("(" + tamagoshisPlaying.indexOf(t) + ") " + t.getName());
                 }
+
+                //Manger
+                System.out.println("Nourrir quel tamagoshi ?");
                 System.out.println(sj);
-                //afficher les tamagoshis
                 System.out.println("Entrez un choix :");
 
                 try{
@@ -78,8 +78,7 @@ public class TamaGame {
         for (Tamagoshi t: tamagoshis) {
             sumAge += t.getAge();
         }
-        //System.out.println("sumAge: " + sumAge + ", sumTotalLifetime: " + Tamagoshi.getLifeTime() * tamagoshis.size() + " total:" + sumAge / Tamagoshi.getLifeTime() * tamagoshis.size());
-        return (sumAge / (Tamagoshi.getLifeTime() * tamagoshis.size())) * 100;
+        return (100 * sumAge / (Tamagoshi.getLifeTime() * tamagoshis.size()));
     }
 
     public void resultat(){
@@ -94,10 +93,17 @@ public class TamaGame {
         System.out.println("score obtenu :" + score() + "%");
     }
 
+    @Override
+    public String toString() {
+        return "TamaGame{" +
+                "tamagoshis=" + tamagoshis +
+                ", tamagoshisPlaying=" + tamagoshisPlaying +
+                '}';
+    }
+
     public static void main(String[] args) {
         TamaGame jeu = new TamaGame();
         jeu.play();
-        System.out.println(jeu.score());
     }
 
 }
