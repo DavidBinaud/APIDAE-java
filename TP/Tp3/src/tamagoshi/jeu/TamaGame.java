@@ -4,6 +4,7 @@ import tamagoshi.tamagoshis.Tamagoshi;
 import tamagoshi.util.Utilisateur;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 import java.util.StringJoiner;
 
 import static java.lang.Integer.parseInt;
@@ -57,16 +58,12 @@ public class TamaGame {
                     tamagoshisPlaying.get(0).mange();
                 }
 
-
-                ArrayList<Tamagoshi> tamagoshisToRemove = new ArrayList<>();
-                for (Tamagoshi t : tamagoshisPlaying) {
+                ListIterator<Tamagoshi> listIterator = tamagoshisPlaying.listIterator();
+                while(listIterator.hasNext()){
+                    Tamagoshi t = listIterator.next();
                     if (!t.consommeEnergie()) {
-                        tamagoshisToRemove.add(t);
+                        listIterator.remove();
                     }
-                }
-
-                for (Tamagoshi t: tamagoshisToRemove) {
-                    tamagoshisPlaying.remove(t);
                 }
             }
         }
