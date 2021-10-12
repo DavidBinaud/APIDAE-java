@@ -51,11 +51,24 @@ public class TamaGame {
                 System.out.println("Entrez un choix :");
 
                 try{
-                    int tamagoshiEating = parseInt(Utilisateur.saisieClavier());
-                    tamagoshisPlaying.get(tamagoshiEating).mange();
+                    int tamagoshiToFeed = parseInt(Utilisateur.saisieClavier());
+                    tamagoshisPlaying.get(tamagoshiToFeed).mange();
                 } catch(Exception e) {
                     System.out.println(tamagoshisPlaying.get(0).getName() + " a été nourri par défaut");
                     tamagoshisPlaying.get(0).mange();
+                }
+
+                //Jouer
+                System.out.println("Jouer avec quel tamagoshi ?");
+                System.out.println(sj);
+                System.out.println("Entrez un choix :");
+
+                try{
+                    int tamagoshiToPlay = parseInt(Utilisateur.saisieClavier());
+                    tamagoshisPlaying.get(tamagoshiToPlay).joue();
+                } catch(Exception e) {
+                    System.out.println(tamagoshisPlaying.get(0).getName() + " a joué par défaut");
+                    tamagoshisPlaying.get(0).joue();
                 }
 
                 ListIterator<Tamagoshi> listIterator = tamagoshisPlaying.listIterator();

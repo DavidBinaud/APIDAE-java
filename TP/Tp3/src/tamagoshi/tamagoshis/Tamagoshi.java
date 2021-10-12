@@ -12,6 +12,10 @@ public class Tamagoshi {
 
     private int maxEnergy;
 
+    private int fun;
+
+    private int maxFun;
+
     private String name;
 
     private Random random = new Random();
@@ -21,6 +25,9 @@ public class Tamagoshi {
         this.age = 0;
         this.maxEnergy = 5 + random.nextInt(5);
         this.energy = 3 + random.nextInt(5);
+
+        this.maxFun = 5 + random.nextInt(5);
+        this.fun = 3 + random.nextInt(5);
     }
 
     public String getName() {
@@ -36,8 +43,18 @@ public class Tamagoshi {
     }
 
     public boolean parle(){
-        System.out.println(name + " : \"" + (energy > 4 ? "Tout va bien!" : "Je suis affamé") + "\"");
-        return energy > 4;
+        String str = "";
+        if(energy > 4 && fun > 4){
+            str = "Tout va bien!";
+        } else if(energy <= 4 && fun <= 4) {
+            str = "Je suis affamé et je m'ennuie à mourrir !";
+        }else if(energy <= 4){
+            str = "Je suis affamé";
+        } else {
+            str = "Je m'ennuie à mourrir !";
+        }
+        System.out.println(name + " : \"" + str + "\"");
+        return energy > 4 && fun > 4;
     }
 
     public boolean mange(){
@@ -50,11 +67,25 @@ public class Tamagoshi {
         return false;
     }
 
+    public boolean joue(){
+        if(fun < maxFun){
+            fun += 1 + random.nextInt(3);
+            System.out.println(name + " : \"On se marre !\"");
+            return true;
+        }
+        System.out.println(name + " : \"laisse-moi tranquille, je bouquine !!\"");
+        return false;
+    }
+
     public boolean consommeEnergie(){
         energy--;
+        fun--;
         age++;
         if(energy <= 0){
             System.out.println(name + " : \"Je suis KO\"");
+            return false;
+        } else if (fun <= 0){
+            System.out.println(name + " :\"snif : je fais une dépression, ciao!\"");
             return false;
         }
         return true;
