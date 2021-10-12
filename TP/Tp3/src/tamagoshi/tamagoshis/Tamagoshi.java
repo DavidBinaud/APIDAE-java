@@ -79,16 +79,24 @@ public class Tamagoshi {
 
     public boolean consommeEnergie(){
         energy--;
-        fun--;
-        age++;
         if(energy <= 0){
             System.out.println(name + " : \"Je suis KO\"");
             return false;
-        } else if (fun <= 0){
+        }
+        return true;
+    }
+
+    public boolean consommeFun(){
+        fun--;
+        if (fun <= 0){
             System.out.println(name + " :\"snif : je fais une dépression, ciao!\"");
             return false;
         }
         return true;
+    }
+
+    public void incrementAge(){
+        age++;
     }
 
     @Override

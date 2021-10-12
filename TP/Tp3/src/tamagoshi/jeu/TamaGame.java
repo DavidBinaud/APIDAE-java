@@ -74,8 +74,10 @@ public class TamaGame {
                 ListIterator<Tamagoshi> listIterator = tamagoshisPlaying.listIterator();
                 while(listIterator.hasNext()){
                     Tamagoshi t = listIterator.next();
-                    if (!t.consommeEnergie()) {
+                    if (!t.consommeEnergie() || !t.consommeFun()) {
                         listIterator.remove();
+                    } else {
+                        t.incrementAge();
                     }
                 }
             }
