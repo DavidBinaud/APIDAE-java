@@ -1,0 +1,3 @@
+[submodule "TP/Tp4"]
+	path = TP/Tp4
+	url = git@gitlabinfo.iutmontp.univ-montp2.fr:binaudd/tamagoshi.git
