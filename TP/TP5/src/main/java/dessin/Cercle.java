@@ -10,7 +10,7 @@ public class Cercle extends ObjetGraphique{
 
     private int rayon;
 
-    public Cercle(Color couleur, Point2D centre, int rayon) {
+    public Cercle(Point2D centre, int rayon, Color couleur) {
         super(couleur);
         this.centre = centre;
         this.rayon = rayon;
@@ -23,6 +23,7 @@ public class Cercle extends ObjetGraphique{
 
     @Override
     public void dessineToi(GraphicsContext context) {
+        context.setFill(this.getCouleur());
         context.fillOval(centre.getX() - rayon, centre.getY() - rayon, rayon, rayon);
     }
 

@@ -34,6 +34,7 @@ public class Rectangle extends ObjetGraphique{
 
     @Override
     public void dessineToi(GraphicsContext context) {
+        context.setFill(this.getCouleur());
         context.fillRect(rectangle.getMinX(), rectangle.getMinY(), rectangle.getWidth(), rectangle.getHeight());
     }
 
