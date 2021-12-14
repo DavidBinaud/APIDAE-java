@@ -9,6 +9,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Toto extends Application {
@@ -30,6 +31,16 @@ public class Toto extends Application {
 
         panel.setCenter(canvas);
         panel.setBottom(btn);
+
+
+        VBox vbox = new VBox(5);
+        for (int i = 0; i < 4; i++) {
+            Button btnGrp = new Button();
+            btnGrp.setText("btn" + i);
+            vbox.getChildren().add(btnGrp);
+        }
+        System.err.println(vbox.getChildren());
+        panel.setLeft(vbox);
         panel.setAlignment(btn, Pos.CENTER);
 
         StackPane root = new StackPane();
