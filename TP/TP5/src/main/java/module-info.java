@@ -5,4 +5,5 @@ module dessin {
 
     opens dessin to javafx.fxml;
     exports dessin;
+    exports toto to javafx.graphics;
 }
