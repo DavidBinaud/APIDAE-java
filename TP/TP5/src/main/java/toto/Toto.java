@@ -24,23 +24,13 @@ public class Toto extends Application {
                 System.exit(0);
             }
         });
-        TotoJPanel panel = new TotoJPanel();
-        Canvas canvas = new Canvas(350,350);
-        GraphicsContext gc = canvas.getGraphicsContext2D();
-        panel.paintComponent(gc);
+        Canvas canvas = new Canvas(400,400);
+        TotoJPanel panel = new TotoJPanel(canvas.getGraphicsContext2D());
+        panel.paintComponent();
 
         panel.setCenter(canvas);
         panel.setBottom(btn);
 
-
-        VBox vbox = new VBox(5);
-        for (int i = 0; i < 4; i++) {
-            Button btnGrp = new Button();
-            btnGrp.setText("btn" + i);
-            vbox.getChildren().add(btnGrp);
-        }
-        System.err.println(vbox.getChildren());
-        panel.setLeft(vbox);
         panel.setAlignment(btn, Pos.CENTER);
 
         StackPane root = new StackPane();

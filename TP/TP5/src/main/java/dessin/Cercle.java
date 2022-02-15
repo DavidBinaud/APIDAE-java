@@ -24,7 +24,7 @@ public class Cercle extends ObjetGraphique{
     @Override
     public void dessineToi(GraphicsContext context) {
         context.setFill(this.getCouleur());
-        context.fillOval(centre.getX() - rayon, centre.getY() - rayon, rayon, rayon);
+        context.fillOval(centre.getX() - rayon, centre.getY() - rayon, rayon*2, rayon*2);
     }
 
     @Override

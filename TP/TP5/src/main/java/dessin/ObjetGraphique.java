@@ -7,8 +7,11 @@ public abstract class ObjetGraphique {
 
     private Color couleur;
 
+    private boolean visible;
+
     public ObjetGraphique(Color couleur) {
         this.couleur = couleur;
+        this.visible = true;
     }
 
     public ObjetGraphique() {
@@ -23,6 +26,13 @@ public abstract class ObjetGraphique {
         this.couleur = couleur;
     }
 
+    public void setVisible(boolean visible){
+        this.visible = visible;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
 
     public abstract void dessineToi(GraphicsContext context);
 
