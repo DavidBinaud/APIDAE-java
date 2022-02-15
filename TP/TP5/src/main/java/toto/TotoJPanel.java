@@ -4,10 +4,12 @@ import dessin.Cercle;
 import dessin.ObjetGraphique;
 import dessin.Rectangle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -55,6 +57,18 @@ public class TotoJPanel extends BorderPane {
         }
 
         this.setLeft(vbox);
+
+        this.gc.getCanvas().setOnMouseClicked(new EventHandler<>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                for (ObjetGraphique objet: objetGraphiques) {
+                    if(objet.isVisible() && objet.contient((int)mouseEvent.getX(), (int)mouseEvent.getY())){
+                        objet.changeColor();
+                    }
+                }
+                paintComponent();
+            }
+        });
     }
 
     public void paintComponent(){
