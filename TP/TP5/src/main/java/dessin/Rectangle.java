@@ -39,6 +39,16 @@ public class Rectangle extends ObjetGraphique{
     }
 
     @Override
+    public void dessineToi(GraphicsContext context, boolean fill) {
+        if(fill){
+            dessineToi(context);
+        } else {
+            context.setStroke(this.getCouleur());
+            context.strokeRect(rectangle.getMinX(), rectangle.getMinY(), rectangle.getWidth(), rectangle.getHeight());
+        }
+    }
+
+    @Override
     public boolean contient(int x, int y) {
         return rectangle.contains(x, y);
     }

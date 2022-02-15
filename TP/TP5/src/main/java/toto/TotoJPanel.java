@@ -22,6 +22,8 @@ public class TotoJPanel extends BorderPane {
 
     private GraphicsContext gc;
 
+    private boolean fill = true;
+
     public TotoJPanel(GraphicsContext gc) {
         super();
         this.gc = gc;
@@ -43,9 +45,8 @@ public class TotoJPanel extends BorderPane {
 
         String[] buttonNames = {"head", "leftEye", "rightEye", "mouth"};
         for (int i = 0; i < 4; i++) {
-            Button button = new Button();
+            Button button = new Button(buttonNames[i]);
             ObjetGraphique target = objetGraphiques.get(i);
-            button.setText(buttonNames[i]);
             button.setOnAction(new EventHandler<>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
@@ -75,14 +76,17 @@ public class TotoJPanel extends BorderPane {
         this.clear();
         for (ObjetGraphique objetGraphique: objetGraphiques) {
             if (objetGraphique.isVisible()) {
-                objetGraphique.dessineToi(gc);
+                objetGraphique.dessineToi(gc, fill);
             }
         }
     }
 
     public void clear(){
-        this.gc.clearRect(0,0,400,400);
+        this.gc.clearRect(0,0,this.gc.getCanvas().getWidth(),this.gc.getCanvas().getHeight());
     }
 
-
+    public void changeFill(){
+        this.fill = !this.fill;
+        paintComponent();
+    }
 }

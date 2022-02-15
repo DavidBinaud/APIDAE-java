@@ -28,6 +28,16 @@ public class Cercle extends ObjetGraphique{
     }
 
     @Override
+    public void dessineToi(GraphicsContext context, boolean fill) {
+        if(fill){
+            dessineToi(context);
+        } else {
+            context.setStroke(this.getCouleur());
+            context.strokeOval(centre.getX() - rayon, centre.getY() - rayon, rayon*2, rayon*2);
+        }
+    }
+
+    @Override
     public boolean contient(int x, int y) {
         return Math.pow(x - centre.getX(), 2) + Math.pow(y - centre.getY(), 2) <= Math.pow(rayon, 2);
     }

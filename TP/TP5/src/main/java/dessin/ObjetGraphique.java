@@ -51,5 +51,7 @@ public abstract class ObjetGraphique {
 
     public abstract void dessineToi(GraphicsContext context);
 
+    public abstract void dessineToi(GraphicsContext context, boolean fill);
+
     public abstract boolean contient(int x, int y);
 }
